@@ -1,7 +1,7 @@
 <?php
-require_once __DIR__ . '/../src/config.php';
-require_once __DIR__ . '/../src/db.php';
-require_once __DIR__ . '/../src/auth.php';
+require_once __DIR__ . '/src/config.php';
+require_once __DIR__ . '/src/db.php';
+require_once __DIR__ . '/src/auth.php';
 require_login();
 $categories = $pdo->query('SELECT id, name FROM categories ORDER BY name')->fetchAll(PDO::FETCH_ASSOC);
 ?><!doctype html>

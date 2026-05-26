@@ -1,7 +1,7 @@
 <?php
-require_once __DIR__ . '/../src/config.php';
-require_once __DIR__ . '/../src/db.php';
-require_once __DIR__ . '/../src/auth.php';
+require_once __DIR__ . '/src/config.php';
+require_once __DIR__ . '/src/db.php';
+require_once __DIR__ . '/src/auth.php';
 
 $errors = [];
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -42,8 +42,18 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     </div>
     <button id="theme-toggle" aria-label="Alternar tema">🌓</button>
   </header>
-  <main class="center">
-    <div class="auth-card card">
+  <main class="auth-page">
+    <div class="auth-layout">
+      <section class="auth-panel">
+        <div class="auth-image">
+          <img src="/assets/img/Investment%20data-amico.png" alt="Ilustração de finanças">
+          <div class="auth-copy">
+            <h1>Comece sua jornada</h1>
+            <p>Cadastre-se para organizar suas finanças e controlar entradas e saídas em um painel simples e visual.</p>
+          </div>
+        </div>
+      </section>
+      <section class="auth-card card">
       <div class="auth-header">
         <div class="icon-circle">🧾</div>
         <h1>Cadastrar</h1>
@@ -56,6 +66,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <button type="submit" class="primary">Criar conta</button>
       </form>
       <p class="small">Já tem conta? <a href="/login.php">Entrar</a></p>
+      </section>
     </div>
   </main>
   <script src="/assets/js/app.js"></script>

@@ -3,9 +3,13 @@
 Projeto exemplo de gestão financeira com frontend (HTML/CSS/JS) e backend em PHP.
 
 Estrutura criada:
-- public/ (entrada web)
-- public/assets/css/style.css
-- public/assets/js/app.js
+- index.php (entrada web)
+- login.php
+- register.php
+- logout.php
+- api/transactions.php
+- assets/css/style.css
+- assets/js/app.js
 - src/config.php
 - src/db.php
 - src/api/transactions.php
@@ -17,7 +21,7 @@ Como rodar (modo dev com PHP embutido):
 
 ```bash
 cd gestao-financeira
-php -S localhost:8000 -t public
+php -S localhost:8000
 ```
 
 Inicializar banco SQLite (duas opções):
