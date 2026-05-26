@@ -64,7 +64,7 @@ document.addEventListener('DOMContentLoaded', ()=>{
 
   async function fetchTransactions(){
     try{
-      const res = await fetch('/api/transactions.php', { credentials: 'same-origin' });
+      const res = await fetch('api/transactions.php', { credentials: 'same-origin' });
       const data = await res.json();
       transactions = Array.isArray(data) ? data : [];
       refreshSummary();
@@ -82,7 +82,7 @@ document.addEventListener('DOMContentLoaded', ()=>{
       category_id: parseInt(document.getElementById('category').value, 10)
     };
     try{
-      await fetch('/api/transactions.php', {
+      await fetch('api/transactions.php', {
         method:'POST', headers:{'Content-Type':'application/json'},
         credentials: 'same-origin',
         body: JSON.stringify(payload)

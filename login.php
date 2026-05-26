@@ -8,18 +8,18 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $email = $_POST['email'] ?? '';
     $password = $_POST['password'] ?? '';
     if (attempt_login($pdo, $email, $password)) {
-        header('Location: /'); exit;
+        header('Location: index.php'); exit;
     } else {
         $errors[] = 'E-mail ou senha inválidos.';
     }
-}
+} 
 ?><!doctype html>
 <html lang="pt-br" data-theme="light">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>Login — Gestão Financeira</title>
-  <link rel="stylesheet" href="/assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
   <header class="topbar auth-topbar">
@@ -36,7 +36,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <div class="auth-layout">
       <section class="auth-panel">
         <div class="auth-image">
-          <img src="/assets/img/Investment%20data-amico.png" alt="Ilustração de finanças">
+          <img src="assets/img/Investment%20data-amico.png" alt="Ilustração de finanças">
           <div class="auth-copy">
             <h1>Bem-vindo de volta</h1>
             <p>Entre na sua conta para acompanhar suas finanças, adicionar despesas e ver relatórios em um painel intuitivo.</p>
@@ -52,12 +52,17 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
       <form method="post" class="auth-form">
         <label><span>E-mail</span><input name="email" type="email" placeholder="seu@exemplo.com" required></label>
         <label><span>Senha</span><input name="password" type="password" placeholder="••••••••" required></label>
+        <div class="option-row">
+          <label class="checkbox"><input type="checkbox" name="remember"> Lembrar-me</label>
+          <a class="small" href="#">Esqueceu a senha?</a>
+        </div>
         <button type="submit" class="primary">Entrar</button>
+        <button type="button" class="secondary">Entrar com Google</button>
       </form>
-      <p class="small">Não tem conta? <a href="/register.php">Cadastre-se</a></p>
+      <p class="small">Não tem conta? <a href="register.php">Cadastre-se</a></p>
       </section>
     </div>
   </main>
-  <script src="/assets/js/app.js"></script>
+  <script src="assets/js/app.js"></script>
 </body>
 </html>

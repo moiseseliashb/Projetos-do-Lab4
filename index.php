@@ -10,7 +10,7 @@ $categories = $pdo->query('SELECT id, name FROM categories ORDER BY name')->fetc
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>Gestão Financeira</title>
-  <link rel="stylesheet" href="/assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/style.css">
   <meta name="color-scheme" content="light dark">
 </head>
 <body>
@@ -25,7 +25,7 @@ $categories = $pdo->query('SELECT id, name FROM categories ORDER BY name')->fetc
     <div class="controls">
       <button id="theme-toggle" aria-label="Alternar tema">🌓</button>
       <span class="user">Olá, <?php echo htmlspecialchars(current_user_name()) ?></span>
-      <a class="btn-logout" href="/logout.php">Sair</a>
+      <a class="btn-logout" href="logout.php">Sair</a>
     </div>
   </header>
   <main>
@@ -86,6 +86,6 @@ $categories = $pdo->query('SELECT id, name FROM categories ORDER BY name')->fetc
     </section>
   </main>
 
-  <script src="/assets/js/app.js"></script>
+  <script src="assets/js/app.js"></script>
 </body>
 </html>

@@ -19,17 +19,17 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         } else {
             register_user($pdo, $name, $email, $password);
             attempt_login($pdo, $email, $password);
-            header('Location: /'); exit;
+            header('Location: index.php'); exit;
         }
     }
-}
+} 
 ?><!doctype html>
 <html lang="pt-br" data-theme="light">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>Cadastro — Gestão Financeira</title>
-  <link rel="stylesheet" href="/assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
   <header class="topbar auth-topbar">
@@ -46,7 +46,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <div class="auth-layout">
       <section class="auth-panel">
         <div class="auth-image">
-          <img src="/assets/img/Investment%20data-amico.png" alt="Ilustração de finanças">
+          <img src="assets/img/Investment%20data-amico.png" alt="Ilustração de finanças">
           <div class="auth-copy">
             <h1>Comece sua jornada</h1>
             <p>Cadastre-se para organizar suas finanças e controlar entradas e saídas em um painel simples e visual.</p>
@@ -63,12 +63,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <label><span>Nome</span><input name="name" type="text" placeholder="Seu nome" required></label>
         <label><span>E-mail</span><input name="email" type="email" placeholder="seu@exemplo.com" required></label>
         <label><span>Senha</span><input name="password" type="password" placeholder="••••••••" required></label>
+        <label><span>Tipo de conta</span><select name="account_type" required><option value="personal">Pessoal</option><option value="business">Profissional</option></select></label>
+        <label class="checkbox"><input type="checkbox" name="newsletter"> Quero receber dicas financeiras</label>
         <button type="submit" class="primary">Criar conta</button>
       </form>
-      <p class="small">Já tem conta? <a href="/login.php">Entrar</a></p>
+      <p class="small">Já tem conta? <a href="login.php">Entrar</a></p>
       </section>
     </div>
   </main>
-  <script src="/assets/js/app.js"></script>
+  <script src="assets/js/app.js"></script>
 </body>
 </html>
