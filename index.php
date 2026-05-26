@@ -14,22 +14,46 @@ $categories = $pdo->query('SELECT id, name FROM categories ORDER BY name')->fetc
   <meta name="color-scheme" content="light dark">
 </head>
 <body>
-  <header class="topbar">
-    <div class="brand">
-      <span class="brand-icon">💼</span>
-      <div>
-        <strong>Gestão Financeira</strong>
-        <span class="brand-subtitle">Controle simples e elegante</span>
+  <div class="page-shell">
+    <aside class="sidebar">
+      <div class="sidebar-brand">
+        <span class="sidebar-icon">💼</span>
+        <div>
+          <strong>Gestão</strong>
+          <span>Financeira</span>
+        </div>
       </div>
-    </div>
-    <div class="controls">
-      <button id="theme-toggle" aria-label="Alternar tema">🌓</button>
-      <span class="user">Olá, <?php echo htmlspecialchars(current_user_name()) ?></span>
-      <a class="btn-logout" href="logout.php">Sair</a>
-    </div>
-  </header>
-  <main>
-    <section id="app" class="container">
+      <nav class="sidebar-nav">
+        <a href="index.php" class="nav-link active">Dashboard</a>
+        <a href="#" class="nav-link">Transações</a>
+        <a href="#" class="nav-link">Relatórios</a>
+        <a href="#" class="nav-link">Configurações</a>
+      </nav>
+      <div class="sidebar-profile">
+        <div class="profile-avatar"><?php echo strtoupper(substr(current_user_name(),0,1)); ?></div>
+        <div>
+          <strong><?php echo htmlspecialchars(current_user_name()) ?></strong>
+          <small>Usuário logado</small>
+        </div>
+      </div>
+    </aside>
+    <section class="main-area">
+      <header class="topbar">
+        <div class="brand">
+          <span class="brand-icon">💼</span>
+          <div>
+            <strong>Gestão Financeira</strong>
+            <span class="brand-subtitle">Visão geral das finanças</span>
+          </div>
+        </div>
+        <div class="controls">
+          <button id="theme-toggle" aria-label="Alternar tema">🌓</button>
+          <span class="user">Olá, <?php echo htmlspecialchars(current_user_name()) ?></span>
+          <a class="btn-logout" href="logout.php">Sair</a>
+        </div>
+      </header>
+      <main class="app-shell">
+        <section id="app" class="container">
       <div class="card summary-grid">
         <div>
           <span class="label">Saldo</span>
