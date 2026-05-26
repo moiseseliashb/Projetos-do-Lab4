@@ -1,0 +1,8 @@
+/vendor/
+/.env
+/.env.local
+/node_modules/
+/public/uploads/
+/coverage/
+/.idea/
+/.vscode/
